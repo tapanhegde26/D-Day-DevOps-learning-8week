@@ -1,0 +1,187 @@
+8 weeks. Beginner to advanced. Real production implementations across Kubernetes on AWS, end-to-end DevSecOps, and AIOps: taught the way it actually works in companies.
+Format: Live Classes | Duration: 8 Weeks | Schedule: 4 days/week(Tuesday, Wednesday, Thursday, friday), 2 hours each
+Timings: 9:30 PM – 11:30 PM IST | Total Classes: 32 | Language: English
+Prerequisite: Basic AWS, Terraform, Docker
+–
+
+Week 1: Kubernetes Fundamentals on Kind (2-Tier App)
+Complete K8s fundamentals with monitoring and GitOps from day one
+Topics Covered
+The story behind Kubernetes — the why before the how
+Kubernetes architecture deep dive (Control Plane, Worker Nodes, etcd, kubelet, kube-proxy)
+Setting up multi-node clusters with Kind (kind config, port mappings, ingress setup)
+Core concepts: Pod, Service, Deployment, ReplicaSet
+Getting comfortable with kubectl — imperative vs declarative
+Understanding YAML manifests in depth
+Namespaces, Labels, Selectors, Annotations
+ConfigMaps and Secrets management
+Pulling private images using ImagePullSecrets
+Resource Requests, Limits, Quotas, LimitRanges
+Liveness, Readiness, and Startup probes
+Init containers and sidecar patterns
+Pod Disruption Budgets
+HPA and VPA for autoscaling
+Rolling upgrades, rollbacks, deployment strategies
+CrashLoopBackOff and OOMKilled debugging
+Kubernetes DNS and service discovery internals
+Reading and interpreting Kubernetes events
+Using Freelens / k9s for cluster navigation
+Basic monitoring with Prometheus + Grafana
+GitOps with ArgoCD
+End-to-end CI/CD pipeline — build, push, deploy
+Live troubleshooting techniques
+🏗 Project: Full 2-tier e-commerce app on multi-node Kind cluster with ConfigMaps, Secrets, HPA, probes, PDBs, basic Prometheus + Grafana monitoring, and ArgoCD GitOps with CI/CD pipeline
+
+Week 2: Production-Grade EKS with Terraform (3-Tier App + Helm)
+Real AWS infrastructure, Terraform-driven EKS, Helm packaging, migrations
+Topics Covered
+Production-grade EKS cluster with Terraform (VPC, node groups, add-ons as modules)
+Managing multiple environments with Terraform workspaces — dev, staging, prod
+EKS add-ons: VPC CNI, CoreDNS, EBS CSI Driver
+EKS managed node groups vs self-managed nodes
+Helm charts deep dive — writing, packaging, templating, values hierarchy
+Helm dependencies and umbrella charts
+IRSA — Kubernetes to AWS IAM with OIDC (Terraform-driven)
+Running a 3-tier app: Frontend + Backend + RDS PostgreSQL
+Database migrations using Kubernetes Jobs and Helm hooks
+Migration CronJobs for scheduled data tasks
+Init containers for DB readiness checks
+AWS Load Balancer Controller deployed via Terraform + Helm
+Ingress with AWS annotations and target group configuration
+AWS Secrets Manager basic integration
+Domain, DNS, and SSL/TLS termination with ACM
+ExternalDNS for automatic Route53 records
+Kubernetes RBAC hardening — ServiceAccounts, ClusterRoles, RoleBindings
+aws-auth ConfigMap and EKS access entries
+🏗 Project: Production-grade 3-tier e-commerce app on EKS — packaged as Helm chart, deployed via Terraform, with migration jobs/CronJobs, IRSA, RDS, custom domain, SSL, and RBAC hardening
+
+Week 3: Microservices, Service Mesh, mTLS, API Gateway
+Complex microservices patterns with service mesh, mTLS, and proper gateways
+Topics Covered
+Why microservices on Kubernetes — patterns and anti-patterns
+Inter-service communication — ClusterIP vs headless vs service mesh
+Service mesh fundamentals — when to use it, when not to
+Istio installation and architecture deep dive
+mTLS for zero-trust service-to-service communication
+Istio traffic management — virtual services, destination rules
+Canary deployments and traffic splitting with Istio
+Visualising mesh traffic with Kiali
+Gateway API — the future of ingress
+API Gateway patterns on Kubernetes
+Rate limiting, retries, circuit breaking at the mesh level
+Distributed tracing across microservices via mesh
+Pod topology spread constraints for multi-AZ resilience
+Network Policies for zero-trust pod-to-pod communication
+Egress controls and namespace isolation
+ArgoCD App-of-Apps and ApplicationSet for microservices GitOps
+🏗 Project: Deploy a proper microservices e-commerce app on EKS with Istio service mesh, mTLS, canary deployments, Gateway API ingress, network policies, and ArgoCD App-of-Apps GitOps
+
+Week 4: Logging, Monitoring, Secret Management, SRE
+Full observability stack, Vault for secrets, SLO/SLI/SLA implementation
+Topics Covered
+How logging and monitoring work in real companies
+Different observability strategies for different workloads
+Prometheus Operator and ServiceMonitor CRDs deep dive
+Loki for log storage and querying
+Fluent Bit for log aggregation on EKS
+Grafana dashboards for Kubernetes, RDS, Lambda, and cloud resources
+AlertManager — routing alerts to Slack and PagerDuty
+OpenTelemetry for distributed tracing
+AWS CloudWatch Container Insights integration
+Monitoring differences: Fargate vs managed node groups
+HashiCorp Vault on Kubernetes — architecture and deployment
+Vault Agent Injector for secret injection into pods
+Vault dynamic secrets for databases
+External Secrets Operator vs Vault Agent — when to use which
+Secret rotation and lifecycle management
+SRE implementation — SLO, SLI, SLA, error budgets
+Defining meaningful SLIs for microservices
+Error budget dashboards and burn rate alerts in Grafana
+On-call runbook writing and documentation standards
+Cost visibility — Kubecost / OpenCost for namespace-level attribution
+🏗 Project: Full observability + secrets stack on the microservices app — Prometheus + Loki + Grafana with SLO dashboards and burn rate alerts, AlertManager Slack integration, distributed tracing, Vault for dynamic secrets, and cost visibility dashboard
+
+Week 5: Scaling, StatefulSets, Storage
+Karpenter, KEDA, persistent workloads on production
+Topics Covered
+Karpenter architecture — node provisioner vs Cluster Autoscaler
+Karpenter NodePool and EC2NodeClass configuration
+Cost optimisation with Spot + On-Demand mixed fleets
+EKS Auto Mode — what it is and when to use it over Karpenter
+KEDA for event-driven pod autoscaling
+KEDA scalers — SQS, Kafka, Prometheus metrics, cron
+HPA vs KEDA vs VPA — when to use what
+Persistent Volume (PV), PVC, and StorageClass concepts
+Dynamic vs static volume provisioning on EKS
+Running StatefulSets on Kubernetes (PostgreSQL, Kafka examples)
+Headless Services for StatefulSet DNS
+EBS vs EFS — choosing the right storage for the right workload
+Troubleshooting multi-attach volume errors
+Debugging common StatefulSet failures
+Volume snapshots and backup strategies
+Stateful workload backup and disaster recovery patterns
+🏗 Project: Microservices app enhanced with Karpenter Spot node scaling, KEDA queue-based pod autoscaling, StatefulSets for Kafka and PostgreSQL with backups and disaster recovery setup
+
+Week 6: DevSecOps on Kubernetes
+End-to-end security — supply chain, runtime, policy, compliance
+Topics Covered
+DevSecOps fundamentals — shift-left vs shift-right security
+Threat modelling for Kubernetes workloads
+Docker image optimisation techniques
+Multi-stage Docker builds for production
+Distroless and minimal base images for security
+Trivy for container image vulnerability scanning in CI
+SBOM generation with Syft and vulnerability scanning with Grype
+Image signing and verification with Cosign and Sigstore
+Admission controllers — ValidatingAdmissionWebhook and MutatingAdmissionWebhook
+OPA Gatekeeper for policy-as-code
+Kyverno for Kubernetes-native policy enforcement
+Pod Security Standards (Restricted, Baseline, Privileged)
+Securing the Kubernetes API server and etcd
+Runtime security with Falco — detecting suspicious container behaviour
+Network security — Cilium NetworkPolicies, eBPF-based observability
+Secrets scanning in CI with gitleaks and trufflehog
+Secure CI/CD pipelines — OIDC-based auth, no long-lived credentials
+Supply chain security — SLSA framework, attestations
+Compliance — CIS Kubernetes Benchmark, kube-bench, kube-hunter
+RBAC audit and least privilege enforcement
+Audit logging for the cluster
+🏗 Project: Full DevSecOps pipeline on the microservices app — Trivy + Grype + SBOM in CI, Cosign image signing with verification at admission, Kyverno policies enforcing Pod Security Standards, Falco for runtime threats, gitleaks in CI, CIS benchmark audit with kube-bench, and audit logging shipped to Grafana
+
+Week 7: CRDs, Operators, Chaos, Production Incidents
+Extending Kubernetes, chaos engineering, real war rooms, interview prep
+Topics Covered
+Custom Resource Definitions (CRDs) — extending the Kubernetes API
+How Karpenter itself is built on CRDs — NodePool and EC2NodeClass as real examples
+Kubernetes Operators — encoding operational knowledge into controllers
+Operator pattern — watch, reconcile, act loop explained
+Building a simple Operator with the Operator SDK
+Chaos engineering basics
+LitmusChaos — pod failure, network failure, resource hog experiments
+Designing chaos experiments for production readiness
+SRE deep dive — incident response lifecycle
+Discussing multiple real production incidents
+Live war room simulation — Incident 1 (OOMKill cascade on order service)
+Live war room simulation — Incident 2 (DB connection pool exhaustion under load)
+Writing RCAs and postmortems for both incidents
+Kubernetes system design interview questions
+How to present the capstone project on your resume and in interviews
+Scenario-based DevOps interview questions around Kubernetes
+🏗 Project: Build a custom Operator with Operator SDK, run LitmusChaos experiments on the microservices app, two full war room simulations with live troubleshooting, and a complete resume-ready project documentation package
+
+Week 8: AIOps on Kubernetes + RAG Implementation
+Running AI workloads on Kubernetes and building intelligent infrastructure
+Topics Covered
+How AI fits into real DevOps workflows — automated error detection, log triage, anomaly detection
+Deploying Ollama on Kubernetes — GPU vs CPU node scheduling, resource limits for AI workloads
+Running local LLMs (Gemma 2B) as a Kubernetes Deployment with persistent model storage
+Building a RAG pipeline on Kubernetes — Qdrant vector database as a StatefulSet
+Document ingestion pipeline — chunking, embedding with nomic-embed-text, storing in Qdrant
+Semantic search — querying vectors to retrieve relevant context before LLM inference
+Connecting RAG to real infrastructure data — feeding live logs, metrics, incident history
+AI-powered health checker as a Kubernetes CronJob — automated failure detection and root cause suggestions
+Exposing the AI chat interface via Kubernetes Ingress with proper auth
+Resource-aware scheduling for AI pods — nodeSelectors, tolerations, priority classes
+Observability for AI workloads — tracking inference latency, query quality, model health in Grafana
+Agentic Kubernetes troubleshooting with AI tools
+🏗 Project: Full AIOps monitoring system — Spring Boot app with failure injection, Python health checker CronJob, Ollama + Gemma 2B for log analysis, Qdrant RAG pipeline with uploadable knowledge base, and a React dashboard with live AI chat. Everything local. Zero external API calls.
